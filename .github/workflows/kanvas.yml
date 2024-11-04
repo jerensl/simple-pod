@@ -40,7 +40,7 @@ jobs:
       - id: test_result
         uses: layer5labs/kanvas-snapshot@v0.2.15
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.GH_TOKEN }}
           mesheryToken: ${{ secrets.MESHERY_TOKEN }}
           prNumber: ${{ env.PULL_NO }}
           application_type: Kubernetes Manifest
