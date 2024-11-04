@@ -1,5 +1,5 @@
 name: Kanvas Screenshot Service
-on:
+'on':
   pull_request:
     types:
       - opened
@@ -38,10 +38,10 @@ jobs:
           path: action
           repository: layer5labs/kanvas-snapshot
       - id: test_result
-        uses: layer5labs/kanvas-snapshot@v0.2.15
+        uses: layer5labs/kanvas-snapshot@v0.2.17
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           mesheryToken: ${{ secrets.MESHERY_TOKEN }}
           prNumber: ${{ env.PULL_NO }}
           application_type: Kubernetes Manifest
-          filePath: ${{ inputs.fileName == '' && 'test/meshery-app-mesh-deployment.yaml' || inputs.fileName }}
+          filePath: ${{ inputs.fileName == '' && 'simple_pod.yml' || inputs.fileName }}
