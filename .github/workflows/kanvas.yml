@@ -40,8 +40,8 @@ jobs:
       - id: test_result
         uses: layer5labs/kanvas-snapshot@v0.2.15
         with:
-          githubToken: ${{ secrets.GH_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           mesheryToken: ${{ secrets.MESHERY_TOKEN }}
           prNumber: ${{ env.PULL_NO }}
           application_type: Kubernetes Manifest
-          filePath: ${{ inputs.fileName == '' && 'simple_pod.yml' || inputs.fileName }}
+          filePath: ${{ inputs.fileName == '' && 'meshery-app-mesh-deployment.yaml' || inputs.fileName }}
